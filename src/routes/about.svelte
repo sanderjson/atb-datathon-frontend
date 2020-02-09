@@ -7,7 +7,7 @@
   <h1 class="ml-2">About Us</h1>
 
   <section class="my-8 mx-auto ml-2">
-    <h2 class="my-2 ">Web App for Aocial Change</h2>
+    <h2 class="my-2 ">Web App for Social Change</h2>
 
     <p>
       Many want to go green. Many don’t like finance. We help people reach their
