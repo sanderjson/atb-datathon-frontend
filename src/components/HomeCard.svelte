@@ -1,6 +1,5 @@
 <script>
   export let post;
-  export let id;
 </script>
 
 <style>
