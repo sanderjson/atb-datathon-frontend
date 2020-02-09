@@ -23,7 +23,7 @@
 </style>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>Local Initiatives</title>
 </svelte:head>
 
 <TopBar />
@@ -31,8 +31,11 @@
 <ul>
   {#each posts as post, id}
     <li>
-      <a rel="prefetch" href="cause/{post.slug}">
-        <HomeCard title={post.title} {id} />
+      <a
+  
+        rel="prefetch"
+        href="cause/{post.slug}">
+        <HomeCard {post} {id} />
       </a>
     </li>
   {/each}
