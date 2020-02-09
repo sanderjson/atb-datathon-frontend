@@ -11,7 +11,6 @@
 <script>
   import HomeCard from "../../components/HomeCard.svelte";
   import TopBar from "../../components/TopBar.svelte";
-
   export let posts;
 </script>
 
@@ -23,7 +22,7 @@
 </style>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>Local Initiatives</title>
 </svelte:head>
 
 <TopBar />
@@ -32,7 +31,7 @@
   {#each posts as post, id}
     <li>
       <a rel="prefetch" href="cause/{post.slug}">
-        <HomeCard title={post.title} {id} />
+        <HomeCard {post} {id} />
       </a>
     </li>
   {/each}

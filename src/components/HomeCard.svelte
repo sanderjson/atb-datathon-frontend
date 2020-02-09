@@ -1,44 +1,34 @@
 <script>
-  export let title;
+  export let post;
   export let id;
-
-  console.log(id);
 </script>
 
 <style>
+  .target {
+    background: var(--cl-green);
+  }
   .card {
-    transition: box-shadow 0.3 ease;
-  }
-
-  .card .overlay {
-    background: var(--cl-white);
-    /* opacity: 0.382; */
-    opacity: 0.691;
-    mix-blend-mode: screen;
-    /* mix-blend-mode: multiply; */
-
-  }
-
-  .card header {
-    margin-top: 5%;
+    max-width: 90%;
+    border: 1px solid var(--cl-grey);
   }
 </style>
 
-<div
-  class="card relative mt-8 rounded shadow-xl hover:shadow-2xl trans-shadow ">
-  <img
-    class="object-cover"
-    style="max-height: 33vh; width: 100%"
-    src="./img/cause-{id + 1}.jpg"
-    alt="" />
-
-  <div style="height: 100px" />
-
-  <div class="overlay absolute inset-0 h-full w-full" />
-  <div class="absolute inset-0 h-full w-full">
-    <header class="text-center">
-      <h1 class="text-lg lg:text-2xl">{title}</h1>
-    </header>
+<article
+  class="card my-8 mx-auto class rounded shadow-xl hover:shadow-2xl trans-shadow">
+  <div class="relative">
+    <img class="hero" src="./img/{post.hero}" alt="img for cause" />
+    <div class="target absolute bottom-0 p-4 text-white rounded-tr">
+      Goal ${post.target}
+    </div>
   </div>
-
-</div>
+  <div class="content my-6">
+    <h1 class="text-xl sm:text-2xl ml-2">{post.title}</h1>
+    <div class="caption ml-2">
+      with
+      <span class="hightlight">
+        {post.charity}
+        <span />
+      </span>
+    </div>
+  </div>
+</article>

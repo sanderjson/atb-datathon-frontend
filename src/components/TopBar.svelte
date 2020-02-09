@@ -26,7 +26,7 @@
 
 <style>
   .top-bar {
-      width: 100%;
+    width: 100%;
     background: var(--cl-green);
     color: var(--cl-white);
     display: flex;
@@ -39,18 +39,32 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    color: var(--cl-grey);
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .top-bar .location span {
+    color: var(--cl-white);
   }
 </style>
 
-<section class="top-bar text-xl ">
-  <div class="h1">Top Causes in Your Area</div>
+<section class="top-bar text-xl py-2">
+  <div class="h1">
+    Top Causes in Your Area
+    <button
+      class="ml-4 center-button my-4 btn btn-sec text-white py-2 px-6 mx-auto rounded
+      text-sm sm:text-md trans-shadow ">
+      Alberta
+    </button>
+  </div>
   {#if crd}
-    <div class="location">
-      <div>
+    <div class="location text-sm">
+      <div class="my-0">
         latitude:
         <span>{JSON.stringify(crd.latitude, 0, 2)}</span>
       </div>
-      <div>
+      <div class="my-0">
         longitude:
         <span>{JSON.stringify(crd.longitude, 0, 2)}</span>
       </div>
