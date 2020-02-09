@@ -1,10 +1,10 @@
 <script>
   import { onMount } from "svelte";
-
+  import Chart from 'chart.js';
   function createChart() {
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
-      type: "bar",
+      type: "doughnut",
       data: {
         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
         datasets: [
@@ -41,11 +41,41 @@
             }
           ]
         }
+      },
+      options: {
+        responsive: true
       }
     });
+
+    var balanceChartCanvas = document.getElementById("balanceChart");
+    var balanceChart = new Chart(balanceChartCanvas, {
+      type: "line",
+      data: {
+        
+        labels: ["November", "December", "January", "February"],
+        datasets: [{
+          borderColor: 'rgba(0, 0, 0)',
+          pointBackgroundColor: 'rgba(0,0,0)',
+          fill: false,
+          label: "Time",
+          data:[ 1000, 1520, 500, 30]}
+        ]
+      },
+      options: {
+        responsive: true
+      }
+    })
   }
 
   onMount(createChart);
 </script>
 
-<canvas id="myChart" width="400" height="400" />
+<div id="dashboard">
+  <div className="chartContainer">
+      <canvas id="balanceChart"/>
+    </div>
+  <div className="relative m-auto max-w-12" >
+    <canvas id="myChart"/>
+  </div>
+</div>
+test
