@@ -1,0 +1,11 @@
+.modal-background {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+
+@media screen and (min-width: 479px) {
+    .modal-container{
+        width: 450px;
+        height: 400px;
+    }
+}

@@ -1,7 +1,10 @@
 <script>
 import ChartDemo from "./ChartDemo.svelte"
+import Modal from "./Modal.svelte"
+
+let loaded = false
 </script>
 
-<div>
-<ChartDemo/>
+<div class='modal-background absolute left-0 right-0 bottom-0 top-0 flex justify-center items-center'>
+    <Modal/>
 </div>

@@ -10,6 +10,6 @@
 	<slot></slot>
 </main>
 
-<footer class="bg-black h-64 mt-8">
+<!-- <footer class="bg-black h-64 mt-8"> -->
 
-</footer>
+<!-- </footer> -->
