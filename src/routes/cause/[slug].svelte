@@ -15,11 +15,13 @@
   import Benefits from "../../components/Benefits.svelte";
   export let post;
 
-  import { buttonAmount } from "../../stores.js";
+  // import { buttonAmount } from "../../stores.js";
+  import { usrAmount } from "../../stores.js";
+
 
   let donateValue;
 
-  const unsubscribe = buttonAmount.subscribe(value => {
+  const unsubscribe = usr.subscribe(value => {
     donateValue = value;
   });
 
