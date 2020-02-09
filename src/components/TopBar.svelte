@@ -50,7 +50,14 @@
 </style>
 
 <section class="top-bar text-xl py-2">
-  <div class="h1">Top Causes in Your Area</div>
+  <div class="h1">
+    Top Causes in Your Area
+    <button
+      class="ml-4 center-button my-4 btn btn-sec text-white py-2 px-6 mx-auto rounded
+      text-sm sm:text-md trans-shadow ">
+      Alberta
+    </button>
+  </div>
   {#if crd}
     <div class="location text-sm">
       <div class="my-0">
