@@ -1,4 +1,4 @@
-<!-- <script>
+ <script>
   import { onMount } from "svelte";
   import Chart from 'chart.js';
   import axios from 'axios';
@@ -15,13 +15,13 @@
         
       });
     var myChart = new Chart(ctx, {
-      type: "doughnut",
+      type: "pie",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: [""],
         datasets: [
           {
             label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
+            data: [12, 19, 3, 5],
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -54,7 +54,16 @@
         }
       },
       options: {
-        responsive: true
+        responsive: true,
+        title: {
+          fontSize: 20,
+          fontColor: '#000000',
+          display: true,
+          text: "Your Accounts",
+        },
+        legend: {
+          align: 'end'
+        }
       }
     });
 
@@ -63,17 +72,38 @@
       type: "line",
       data: {
         
-        labels: ["November", "December", "January", "February"],
+        labels: ["Nov", "Dec", "Jan", "Feb"],
         datasets: [{
-          borderColor: 'rgba(0, 0, 0)',
-          pointBackgroundColor: 'rgba(0,0,0)',
+          borderColor: 'rgba(98, 190, 193)',
+          pointBackgroundColor: 'rgba(255,255,255)',
           fill: false,
           label: "Time",
           data:[ 1000, 1520, 500, 30]}
         ]
       },
       options: {
-        responsive: true
+        legend: {
+          display: false
+        },
+        responsive: true,
+        title: {
+          fontSize: 20,
+          fontColor: '#000000',
+          display: true,
+          text: "Your Accounts Activity",
+        },
+        scales: {
+            xAxes: [{
+              gridLines: {
+              },
+              display: false
+            }],
+            yAxes: [{
+              gridLines: {
+                show: false
+              }
+            }]
+          }
       }
     })
   }
@@ -86,7 +116,7 @@
       <canvas id="balanceChart"/>
     </div>
   <div className="relative m-auto max-w-12" >
-    <canvas id="myChart"/>
+    <canvas id="myChart" width="600" height="400"/>
   </div>
 </div>
-test
+

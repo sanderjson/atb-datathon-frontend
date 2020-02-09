@@ -3,9 +3,26 @@
 }
 
 
+.modal-container {
+    background-color: var(--cl-green);
+}
+
 @media screen and (min-width: 479px) {
     .modal-container{
         width: 450px;
         height: 400px;
     }
+}
+
+.modal-button {
+    background-color: var(--cl-blue);
+}
+
+.modal-input {
+    border-color: var(--cl-grey);
+    border-width: 1.5px;
+}
+
+.modal-add-button {
+    color: var(--cl-blue);
 }
