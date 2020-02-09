@@ -26,3 +26,20 @@
 .modal-add-button {
     color: var(--cl-blue);
 }
+
+.thumbs-up {
+    transform: rotate(180deg);
+}
+
+.thumbs-side {
+    transform: rotate(90 deg);
+}
+
+.thumbs-icon {
+    fill: white;
+}
+
+.status-buttons {
+    flex-basis: 0;
+    flex: 1 1 0px;
+}

@@ -6,14 +6,7 @@
   function createChart() {
     var ctx = document.getElementById("myChart");
     
-    axios({
-      method: "put",
-      url: "http://18.220.251.195/api/user",
-      responseType: "json"
-    })
-      .then(function (response) {
-        
-      });
+    
     var myChart = new Chart(ctx, {
       type: "pie",
       data: {
