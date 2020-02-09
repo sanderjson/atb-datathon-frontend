@@ -6,6 +6,4 @@
   <title>Sapper project template</title>
 </svelte:head>
 
-<h1>This is the Dashboard</h1>
-
-<Dashboard />
+<Dashboard/>

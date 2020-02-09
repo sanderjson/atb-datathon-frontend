@@ -1,16 +1,23 @@
-<!-- <script>
+ <script>
   import { onMount } from "svelte";
+  import Chart from 'chart.js';
+  import axios from 'axios';
+  export let accountBalances;
+  export let balanceOverTime;
+  console.log(accountBalances);
 
   function createChart() {
     var ctx = document.getElementById("myChart");
+
+
     var myChart = new Chart(ctx, {
-      type: "bar",
+      type: "pie",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: [""],
         datasets: [
           {
-            label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
+            label: "Your Accounts",
+            data: accountBalances && accountBalances.lenght > 0? accountBalances : [12, 19, 3, 5],
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -41,11 +48,71 @@
             }
           ]
         }
+      },
+      options: {
+        responsive: true,
+        title: {
+          fontSize: 20,
+          fontColor: '#000000',
+          display: true,
+          text: "Your Accounts",
+        },
+        legend: {
+          align: 'end'
+        }
       }
     });
+
+    var balanceChartCanvas = document.getElementById("balanceChart");
+    var balanceChart = new Chart(balanceChartCanvas, {
+      type: "line",
+      data: {
+        
+        labels: ["Nov", "Dec", "Jan", "Feb"],
+        datasets: [{
+          borderColor: 'rgba(98, 190, 193)',
+          pointBackgroundColor: 'rgba(255,255,255)',
+          fill: false,
+          label: "Time",
+          data: balanceOverTime}
+        ]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        responsive: true,
+        title: {
+          fontSize: 20,
+          fontColor: '#000000',
+          display: true,
+          text: "Your Accounts Activity",
+        },
+        scales: {
+            xAxes: [{
+              gridLines: {
+              },
+              display: false
+            }],
+            yAxes: [{
+              gridLines: {
+                show: false
+              }
+            }]
+          }
+      }
+    })
   }
 
   onMount(createChart);
 </script>
 
-<canvas id="myChart" width="400" height="400" /> -->
+<div id="dashboard">
+  <div className="chartContainer">
+      <canvas id="balanceChart"/>
+    </div>
+  <div className="relative m-auto max-w-12" >
+    <canvas id="myChart" width="600" height="400"/>
+  </div>
+</div>
+
