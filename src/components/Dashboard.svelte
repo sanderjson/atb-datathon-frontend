@@ -1,7 +1,7 @@
 <script>
-import ChartDemo from "./ChartDemo.svelte"
+  import ChartDemo from "./ChartDemo.svelte";
 </script>
 
 <div>
-<ChartDemo/>
+  <ChartDemo />
 </div>

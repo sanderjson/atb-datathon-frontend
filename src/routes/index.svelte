@@ -1,5 +1,5 @@
 <script>
-import Dashboard from "../components/Dashboard.svelte"
+  import Dashboard from "../components/Dashboard.svelte";
 </script>
 
 <svelte:head>
@@ -8,4 +8,4 @@ import Dashboard from "../components/Dashboard.svelte"
 
 <h1>This is the Dashboard</h1>
 
-<Dashboard/>
+<Dashboard />

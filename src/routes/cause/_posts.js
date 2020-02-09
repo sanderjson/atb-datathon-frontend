@@ -3,6 +3,7 @@ const posts = [
     title: "Make the Rockies Resilient",
     charity: "The Rockies Institute",
     slug: "make-the-rockies-resilient",
+    target: 5000,
     benefits: [
       "Make a climate resilient future",
       "Promote education and research",
@@ -18,6 +19,7 @@ const posts = [
     title: "Protect Canada’s Land and Water",
     charity: "Canadian Parks and Wilderness Society (CPAWS)",
     slug: "protect-canadas-land-and-water",
+    target: 5000,
     benefits: [
       "Establish new/expanded parks",
       "Protect terrestrial ecosystems",
@@ -34,6 +36,7 @@ const posts = [
     title: "Change the Law",
     charity: "EcoJustice",
     slug: "change-the-law",
+    target: 5000,
     benefits: ["Defend nature", "Combat climate change", "Long-term solutions"],
     id: 3,
     text: [

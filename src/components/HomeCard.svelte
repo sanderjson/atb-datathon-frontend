@@ -11,9 +11,9 @@
   }
 
   .card .overlay {
-    background: var(--cl-pri);
+    background: var(--cl-white);
     /* opacity: 0.382; */
-    opacity: 0.191;
+    opacity: 0.691;
     mix-blend-mode: screen;
     /* mix-blend-mode: multiply; */
 
