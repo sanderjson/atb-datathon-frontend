@@ -3,6 +3,8 @@
   import "../../static/modal.css"
   import Modal from "./Modal.svelte"
   import axios from 'axios';
+  import {buttonAmount, usrAmount} from '../stores.js';
+  // console.
 
   let showDashboard = false
   let accountIds = [];
@@ -16,24 +18,31 @@
 
   function modifier(donationEst) { 
     if(donationEst > 0) {
-      posMultiplier = [0.04, 0, 0.05]
-    } else if(donationEst <0 ) {
+      posMultiplier = [0.04, 0, 0.05];
+    } else {
       posMultiplier = [0.01, 0, 0.02];
-    } else if(donationEst> -5 || donationEst <5) {
-      value = "$5.00";
+    } 
+  }
+
+  const updateStoreAmnt = (index) => {
+    if(index ===0) {
+      usrAmount.update((n)=>{return buttonAmount * (1 - posMultiplier[index])});
+    } else if (index === 2) {
+      usrAmount.update((n) =>{return buttonAmount * (1 + posMultiplier[index])});
     }
   }
 
   const handleThumbsDown = () => {
-    donationAmnt = donationAmnt * posMultiplier[0];
+    // donationAmnt = Number(donationAmnt) * posMultiplier[0];
+    updateStoreAmnt(0);
   }
 
   const handleThumbsSide= () => {
-    donationAmnt = initialDonationAmnt
+    updateStoreAmnt(1);
   }
 
   const handleThumbsUp = () => {
-    donationAmnt = donationAmnt * posMultiplier[2];
+    updateStoreAmnt(2);
   }
 
   function handleAddId() {
@@ -63,8 +72,11 @@
           }
         }
         modifier(donationEst);
+        donationAmnt = donationEst.net_change;
+        // buttonAmount.update(n => n=donationAmnt);
         balanceOverTime = [accounts.transaction_history[0].balance,accounts.transaction_history[1].balance,accounts.transaction_history[2].balance,accounts.transaction_history[3].balance]
         showDashboard = true;
+        console.log(balanceOverTime, donationAmnt)
     }).catch((error) => {
         console.error(error);
     });
@@ -76,7 +88,7 @@
 </script>
 
 {#if !showDashboard}
-  <div  class='modal-background absolute left-0 right-0 bottom-0 top-0 flex justify-center items-center'>
+  <div class='modal-background absolute left-0 right-0 bottom-0 top-0 flex justify-center items-center'>
       <Modal>
         <div class='ml-auto p-4 float-right'> 
           <button on:click = {handleCloseModal}> 
@@ -108,7 +120,7 @@
     <div class='flex justify-center p-4 flex-col'>
       <h2 class='text-center text-md font-bold'>How you feeling financially this month?</h2>
       <div class='mt-2 flex border-solid border justify-around'>
-        <button class='p-2 status-buttons flex justify-center flex-col'>
+        <button on:click={handleThumbsUp} class='p-2 status-buttons flex justify-center flex-col'>
           <svg xmlns="http://www.w3.org/2000/svg" 
             width="24" height="24" viewBox="0 0 24 24" fill="none" 
             stroke="currentColor" stroke-width="2" stroke-linecap="round" 
@@ -119,7 +131,7 @@
           </svg>
          <p class='text-sm'>Feeling Great!</p>
         </button>
-        <button class='p-2 status-buttons border-l border-r flex justify-center flex-col'>
+        <button on:click={handleThumbsSide} class='p-2 status-buttons border-l border-r flex justify-center flex-col'>
           <svg xmlns="http://www.w3.org/2000/svg" 
             width="24" height="24" viewBox="0 0 24 24" fill="none" 
             stroke="currentColor" stroke-width="2" stroke-linecap="round" 
@@ -130,7 +142,7 @@
           </svg>
          <p class='text-sm'>Doing OK</p>
         </button>
-        <button class='p-2 status-buttons flex justify-center flex-col'>
+        <button on:click={handleThumbsDown} class='p-2 status-buttons flex justify-center flex-col'>
           <svg xmlns="http://www.w3.org/2000/svg" 
             width="24" height="24" viewBox="0 0 24 24" fill="none" 
             stroke="currentColor" stroke-width="2" stroke-linecap="round" 
@@ -144,7 +156,7 @@
       </div>
       <div class='border-b py-2 flex flex-col justify-center items-center'>
         <p class='text-center font-semibold'> Your Suggested Giving Power for February:</p>
-        <input class='my-4 border border-solid text-center font-semibold' bind:value={donationAmnt}/>
+        <input class='my-4 border border-solid text-center font-semibold' value={"$50.00"}/>
         <button class='py-1 px-2 m-auto modal-button text-white'> Find Causes to Give to</button>
       </div>
     </div>
