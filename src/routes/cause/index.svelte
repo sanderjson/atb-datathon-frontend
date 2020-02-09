@@ -11,7 +11,6 @@
 <script>
   import HomeCard from "../../components/HomeCard.svelte";
   import TopBar from "../../components/TopBar.svelte";
-
   export let posts;
 </script>
 
@@ -31,10 +30,7 @@
 <ul>
   {#each posts as post, id}
     <li>
-      <a
-  
-        rel="prefetch"
-        href="cause/{post.slug}">
+      <a rel="prefetch" href="cause/{post.slug}">
         <HomeCard {post} {id} />
       </a>
     </li>

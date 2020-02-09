@@ -15,7 +15,15 @@
   import Benefits from "../../components/Benefits.svelte";
   export let post;
 
-  console.log(post);
+  import { buttonAmount } from "../../stores.js";
+
+  let donateValue;
+
+  const unsubscribe = buttonAmount.subscribe(value => {
+    donateValue = value;
+  });
+
+  // console.log(post);
 </script>
 
 <style>
@@ -101,7 +109,7 @@
     <button
       class="my-4 btn btn-pri text-white py-2 px-6 mx-auto rounded text-lg
       sm:text-2xl shadow-xl hover:shadow-2xl trans-shadow ">
-      Donate $100.00
+      Donate ${donateValue}
     </button>
     <button
       class="my-4 btn btn-sec py-2 px-6 mx-auto rounded text-lg sm:text-2xl
