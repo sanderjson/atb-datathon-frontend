@@ -2,19 +2,22 @@
   import { onMount } from "svelte";
   import Chart from 'chart.js';
   import axios from 'axios';
+  export let accountBalances;
+  export let balanceOverTime;
+  console.log(accountBalances);
 
   function createChart() {
     var ctx = document.getElementById("myChart");
-    
-    
+
+
     var myChart = new Chart(ctx, {
       type: "pie",
       data: {
         labels: [""],
         datasets: [
           {
-            label: "# of Votes",
-            data: [12, 19, 3, 5],
+            label: "Your Accounts",
+            data: accountBalances && accountBalances.lenght > 0? accountBalances : [12, 19, 3, 5],
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -71,7 +74,7 @@
           pointBackgroundColor: 'rgba(255,255,255)',
           fill: false,
           label: "Time",
-          data:[ 1000, 1520, 500, 30]}
+          data: balanceOverTime}
         ]
       },
       options: {
