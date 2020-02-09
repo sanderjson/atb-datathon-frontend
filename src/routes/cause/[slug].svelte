@@ -18,7 +18,9 @@
 </script>
 
 <style>
-
+.target {
+  background: var(--cl-green);
+}
 </style>
 
 <svelte:head>
@@ -27,7 +29,7 @@
 
 <div class="relative">
   <img src="./img/cause-{post.id}.jpg" alt="img for cause" />
-  <div class="target absolute b-0">{post.target}</div>
+  <div class="target absolute b-0 p-4">{post.target}</div>
 </div>
 
 <h1>{post.title}</h1>
