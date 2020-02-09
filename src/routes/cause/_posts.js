@@ -1,9 +1,11 @@
 const posts = [
   {
+    hashtag: "#supporttherockies",
     title: "Make the Rockies Resilient",
     charity: "The Rockies Institute",
     slug: "make-the-rockies-resilient",
     target: 5000,
+    logo: "logo-rockies.png",
     benefits: [
       "Make a climate resilient future",
       "Promote education and research",
@@ -16,10 +18,12 @@ const posts = [
     ]
   },
   {
+    hashtag: "#supportcpaws",
     title: "Protect Canada’s Land and Water",
     charity: "Canadian Parks and Wilderness Society (CPAWS)",
     slug: "protect-canadas-land-and-water",
     target: 5000,
+    logo: "logo-cpaws.jpg",
     benefits: [
       "Establish new/expanded parks",
       "Protect terrestrial ecosystems",
@@ -33,10 +37,13 @@ const posts = [
     ]
   },
   {
-    title: "Change the Law",
+    hashtag: "#supportecojustice",
+    title:
+      "Support laws that protect the environment and commuities from hazardous dilbit disasters.",
     charity: "EcoJustice",
     slug: "change-the-law",
     target: 5000,
+    logo: "logo-ecojustice.jpg",
     benefits: ["Defend nature", "Combat climate change", "Long-term solutions"],
     id: 3,
     text: [

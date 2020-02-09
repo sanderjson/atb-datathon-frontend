@@ -1,28 +1,52 @@
 :root {
-  /* --cl-green: #A9D460; */
-  --cl-green: #12664F;
-
-  --cl-blue: #62bec1;
-  --cl-grey: #afaeae;
+  --cl-green: #0a8f6b;
+  --cl-blue: #2ecfd4;
+  --cl-grey: #c4c4c4;
   --cl-grey-dark: #686b6f;
-  --cl-yellow: #f4b740;
+  --cl-yellow: #f5bc4c;
   --cl-black: #000000;
   --cl-white: #ffffff;
-  --font-body: font-family: 'Karla', Arial, Helvetica, sans-serif;
-  --font-h: font-family: 'Rubik', Arial, Helvetica, sans-serif; 
+  --font-body: "Karla", Arial, Helvetica, sans-serif;
+  --font-h: "Rubik", Arial, Helvetica, sans-serif;
 }
-
 
 body {
   font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 2.4;
 }
 
-h1, h2, h3, h4, h5 ,h6 {
+h1,
+.h1, h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-h);
+  font-weight: 700 !important;
 }
 svg {
   fill: var(--cl-grey-dark);
 }
 .trans-shadow {
   transition: box-shadow 0.3s ease-in-out;
+}
+
+.btn {
+  align-self: flex-center;
+  width: initial;
+}
+.btn-pri {
+  background: var(--cl-blue);
+}
+.btn-sec {
+  color: var(--cl-blue);
+}
+
+.hightlight {
+  color: var(--cl-blue);
+}
+hr {
+  background: var(--cl-grey);
+  border-width: 1px;
 }
