@@ -33,7 +33,8 @@ const posts = [
     ]
   },
   {
-    title: "Change the Law",
+    title:
+      "Support laws that protect the environment and commuities from hazardous dilbit disasters.",
     charity: "EcoJustice",
     slug: "change-the-law",
     target: 5000,
