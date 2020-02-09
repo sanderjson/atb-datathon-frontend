@@ -80,6 +80,10 @@
     color: var(--cl-grey-dark);
     justify-self: center;
   }
+
+  button {
+    min-width: 150px;
+  }
 </style>
 
 <svelte:head>
@@ -107,7 +111,7 @@
   </div>
   <div class="button">
     <button
-      class="my-4 btn btn-pri text-white py-2 px-6 mx-auto rounded text-lg
+      class="my-4 btn btn-pri text-white py-2 px-8 mx-auto rounded text-lg
       sm:text-2xl shadow-xl hover:shadow-2xl trans-shadow ">
       Donate ${donateValue}
     </button>
