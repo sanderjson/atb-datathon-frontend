@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { onMount } from "svelte";
   import Chart from 'chart.js';
   import axios from 'axios';

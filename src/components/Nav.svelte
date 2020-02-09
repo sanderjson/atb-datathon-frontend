@@ -10,9 +10,15 @@
   }
 </script>
 
+<style>
+  nav {
+    background: var(--cl-blue);
+  }
+</style>
+
 <nav
-  class="text-white w-full flex items-center justify-between flex-wrap
-  bg-teal-600 p-6 shadow-lg lg:fixed lg:top-0">
+  class="text-white w-full flex items-center justify-between flex-wrap p-6
+  shadow-lg lg:fixed lg:top-0">
 
   <a href="." class="font-semibold text-xl tracking-tight mr-4">Fintly</a>
 
