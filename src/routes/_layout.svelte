@@ -5,11 +5,9 @@
   export let segment;
 </script>
 
-<!-- <Nav {segment} /> -->
-
 <main class="container mx-auto">
   <slot />
 </main>
 
-<footer class="bg-black h-64 mt-8" />
-<BottomBar />
+<footer class="bg-black h-32 mt-8" />
+<BottomBar {segment} />
