@@ -1,15 +1,15 @@
 <script>
-	import Nav from '../components/Nav.svelte';
+  import Nav from "../components/Nav.svelte";
+  import BottomBar from "../components/BottomBar.svelte";
 
-	export let segment;
+  export let segment;
 </script>
 
-<Nav {segment}/>
+<!-- <Nav {segment} /> -->
 
-<main class="lg:mt-20 container mx-auto p-4">
-	<slot></slot>
+<main class="container mx-auto">
+  <slot />
 </main>
 
-<footer class="bg-black h-64 mt-8">
-
-</footer>
+<footer class="bg-black h-64 mt-8" />
+<BottomBar />
