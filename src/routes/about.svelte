@@ -7,7 +7,7 @@
   <h1 class="ml-2">About Us</h1>
 
   <section class="my-8 mx-auto ml-2">
-    <h2 class="my-2 ">Web App for Social Change</h2>
+    <h2 class="my-2 ">Progressive web app for local, environmental change</h2>
 
     <p>
       Many want to go green. Many don’t like finance. We help people reach their
@@ -36,9 +36,9 @@
       As Open Banking becomes a global phenomena, there is pressure on
       traditional banks to compete with FinTech companies and stay relevant with
       their customers. More customers are valuing corporate social
-      responsibility from the organisations they interact with. We is
-      designed for banks to help empower users to understand their “Giving Power
-      ™”, their opportunity to make social change, derived from their financial
+      responsibility from the organisations they interact with. We is designed
+      for banks to help empower users to understand their “Giving Power ™”,
+      their opportunity to make social change, derived from their financial
       data.
     </p>
   </section>
