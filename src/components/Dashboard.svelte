@@ -53,9 +53,7 @@
   }).then((response) => {
         let data = response.data;
         let accounts = data.accounts;
-        console.log(accounts);
         donationEst = accounts.donation_est;
-        console.log(donationEst);
         for(let i=0; i < accountIds.length; i++){
           let accountInfo = accounts[accountIds[i]];
           if(accountBalances[accountInfo.label]) {

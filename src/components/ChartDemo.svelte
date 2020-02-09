@@ -8,7 +8,11 @@
 
   function createChart() {
     var ctx = document.getElementById("myChart");
+    let pieChartValues = [];
 
+    for(let key in accountBalances){
+      pieChartValues.push(accountBalances[key]);
+    }
 
     var myChart = new Chart(ctx, {
       type: "pie",
@@ -17,7 +21,7 @@
         datasets: [
           {
             label: "Your Accounts",
-            data: accountBalances && accountBalances.lenght > 0? accountBalances : [12, 19, 3, 5],
+            data: pieChartValues,
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
